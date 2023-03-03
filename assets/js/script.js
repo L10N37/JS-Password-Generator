@@ -11,22 +11,33 @@ var IncSpecial= false;
 //                      //
 
 
+
+
 var PassLength = prompt("Length of password? (8 to 128 Characters");
 
 
 
 console.log("User has requested a password length of:" + PassLength + " Characters");
-if (PassLength < 8 || PassLength > 128) {
-  prompt("Password needs to be between 8 and 128 characters, please reload and try again")
+if (PassLength < 8 || PassLength > 128 || isNaN(PassLength)) {
+  prompt("Password needs to be between 8 and 128 characters, click 'OK' to reload and try again"); 
   location.reload();
 }
+
 else {
  var temp= prompt("Do you want to include Lower-Case letters? (Enter 'y' or 'n')");
  if (temp == 'y' || temp == 'Y') {IncLowerCase = true; console.log("User wants to Include lower case letters?:" +IncLowerCase);}
- else {console.log("Do not include lower case letters in the password")}
+ else if (temp == 'n' || temp== 'N') {console.log("Do not include lower case letters in the password");}
+ else{console.log("Invalid Input - reloading!"); prompt("Invalid Input - click 'OK' to reload!"); location.reload();}
+
  var temp= prompt("Do you want to include Upper-Case letters? (Enter 'y' or 'n')");
-  prompt("Do you want to include Numeric values? (Enter 'y' or 'n')")
-  prompt("Do you want to include Special Characters? (Enter 'y' or 'n')")
+ if (temp == 'y' || temp == 'Y') {IncUpperCase = true; console.log("User wants to Include lower case letters?:" +IncUpperCase);}
+ else if (temp == 'n' || temp== 'N') {console.log("Do not include lower case letters in the password")}
+ else {console.log("Invalid Input - reloading!"); location.reload();}
+
+
+
+ // prompt("Do you want to include Numeric values? (Enter 'y' or 'n')")
+ // prompt("Do you want to include Special Characters? (Enter 'y' or 'n')")
 };
 
 
