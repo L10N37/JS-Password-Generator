@@ -21,14 +21,13 @@ if (PassLength < 8 || PassLength > 128 || isNaN(PassLength)) {
   location.reload();
 }
 
-
 else {
 
  var temp= prompt("Do you want to include Lower-Case letters? (Enter 'y' or 'n')");
  if (temp == 'y' || temp == 'Y') {
   IncLowerCase = true; console.log("User wants to Include lower case letters?:" +IncLowerCase);
   //Combine user selections into single array
-  UserSelections= UserSelections.concat(lowerCaseLetters);
+  UserSelections=UserSelections.concat(lowerCaseLetters);
 }
  else if (temp == 'n' || temp== 'N') {console.log("Do not include lower case letters in the password");}
  else{prompt("Invalid input - page will reload!"); console.log("Invalid Input - reloading!"); location.reload();}
@@ -70,26 +69,35 @@ else {
 
 };
 
-
 //Console log User selected concatenated array (testing)
 for (let index = 0; index < UserSelections.length; index++) {
   console.log(UserSelections[index]);
 }
 
 
-
-
+/*
 function generatePassword(x){
- for (var i = 0; i <= PassLength; i++) {
-
-x= "blah";
-  
+x = "blah";
 return x;
  
    }
+*/
+
+
+// program to get a random item from an array [https://www.programiz.com/javascript/examples/get-random-item]
+
+function generatePassword(x) {
+  let item; //declare here for access outside the for loop
+
+  for (let index = 0; index < PassLength.length; index++) { 
+  // get random index value
+  const randomIndex = Math.floor(Math.random() * UserSelections.length);
+  // get random item
+  item = UserSelections[randomIndex];
+  }
+
+  return item;
 }
-
-
 
 // Write password to the #password output box
 function writePassword() {
