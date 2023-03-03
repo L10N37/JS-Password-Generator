@@ -11,72 +11,75 @@ let IncSpecial=false;
 //                      //
 
 
-let PassLength = prompt("Length of password? (8 to 128 Characters");
-let UserSelections=[];
 
+// Write password to the #password output box
+function writePassword() {
 
-console.log("User has requested a password length of:" + PassLength + " Characters");
-if (PassLength < 8 || PassLength > 128 || isNaN(PassLength)) {
-  prompt("Password needs to be between 8 and 128 characters, click 'OK' to reload and try again"); 
-  location.reload();
-}
-
-else {
-
- var temp= prompt("Do you want to include Lower-Case letters? (Enter 'y' or 'n')");
- if (temp == 'y' || temp == 'Y') {
-  IncLowerCase = true; console.log("User wants to Include lower case letters?:" +IncLowerCase);
-  //Combine user selections into single array
-  UserSelections=UserSelections.concat(lowerCaseLetters);
-}
- else if (temp == 'n' || temp== 'N') {console.log("Do not include lower case letters in the password");}
- else{prompt("Invalid input - page will reload!"); console.log("Invalid Input - reloading!"); location.reload();}
-
-
- var temp= prompt("Do you want to include Upper-Case letters? (Enter 'y' or 'n')");
- if (temp == 'y' || temp == 'Y') {
-  IncUpperCase = true; console.log("User wants to Include upper case letters?:" +IncUpperCase);
+  let PassLength = prompt("Length of password? (8 to 128 Characters");
+  let UserSelections=[];
+  
+  
+  console.log("User has requested a password length of:" + PassLength + " Characters");
+  if (PassLength < 8 || PassLength > 128 || isNaN(PassLength)) {
+    prompt("Password needs to be between 8 and 128 characters, click 'OK' to reload and try again"); 
+    location.reload();
+  }
+  
+  else {
+  
+   var temp= prompt("Do you want to include Lower-Case letters? (Enter 'y' or 'n')");
+   if (temp == 'y' || temp == 'Y') {
+    IncLowerCase = true; console.log("User wants to Include lower case letters?:" +IncLowerCase);
     //Combine user selections into single array
-  UserSelections=UserSelections.concat(upperCaseLetters);
-}
- else if (temp == 'n' || temp== 'N') {console.log("Do not include lower case letters in the password");}
- else {prompt("Invalid input - page will reload!"); console.log("Invalid Input - reloading!"); location.reload();}
+    UserSelections=UserSelections.concat(lowerCaseLetters);
+  }
+   else if (temp == 'n' || temp== 'N') {console.log("Do not include lower case letters in the password");}
+   else{prompt("Invalid input - page will reload!"); console.log("Invalid Input - reloading!"); location.reload();}
+  
+  
+   var temp= prompt("Do you want to include Upper-Case letters? (Enter 'y' or 'n')");
+   if (temp == 'y' || temp == 'Y') {
+    IncUpperCase = true; console.log("User wants to Include upper case letters?:" +IncUpperCase);
+      //Combine user selections into single array
+    UserSelections=UserSelections.concat(upperCaseLetters);
+  }
+   else if (temp == 'n' || temp== 'N') {console.log("Do not include lower case letters in the password");}
+   else {prompt("Invalid input - page will reload!"); console.log("Invalid Input - reloading!"); location.reload();}
+  
+  
+   var temp= prompt("Do you want to include Numeric values? (Enter 'y' or 'n')");
+   if (temp == 'y' || temp == 'Y') {
+    IncNumeric = true; console.log("User wants to Include numberic values?:" +IncNumeric);
+     //Combine user selections into single array
+    UserSelections=UserSelections.concat(numbersZeroToNine);
+  }
+   else if (temp == 'n' || temp== 'N') {console.log("Do not include lower case letters in the password");}
+   else {prompt("Invalid input - page will reload!"); console.log("Invalid Input - reloading!"); location.reload();}
+  
+  
+   var temp= prompt("Do you want to include Special Characters? (Enter 'y' or 'n')");
+   if (temp == 'y' || temp == 'Y') {
+    IncSpecial = true; console.log("User wants to Include lower case letters?:" +IncSpecial);
+      //Combine user selections into single array
+       UserSelections=UserSelections.concat(selectedSpecialCharacters);
+  }
+   else if (temp == 'n' || temp== 'N') {console.log("Do not include lower special characters in the password");}
+   else {prompt("Invalid input - page will reload!"); console.log("Invalid Input - reloading!"); location.reload();}
+  
+  
+   if (IncLowerCase== false && IncUpperCase==false && IncNumeric== false && IncSpecial==false) {
+    {prompt("No valid characters selected for password generation, reloading!"); console.log("No valid characters selected for password gen!"); location.reload();}
+   }
+  
+  };
+  
+  //Console log User selected concatenated array (testing)
+  for (let index = 0; index < UserSelections.length; index++) {
+    console.log(UserSelections[index]);
+  }
 
 
- var temp= prompt("Do you want to include Numeric values? (Enter 'y' or 'n')");
- if (temp == 'y' || temp == 'Y') {
-  IncNumeric = true; console.log("User wants to Include numberic values?:" +IncNumeric);
-   //Combine user selections into single array
-  UserSelections=UserSelections.concat(numbersZeroToNine);
-}
- else if (temp == 'n' || temp== 'N') {console.log("Do not include lower case letters in the password");}
- else {prompt("Invalid input - page will reload!"); console.log("Invalid Input - reloading!"); location.reload();}
-
-
- var temp= prompt("Do you want to include Special Characters? (Enter 'y' or 'n')");
- if (temp == 'y' || temp == 'Y') {
-  IncSpecial = true; console.log("User wants to Include lower case letters?:" +IncSpecial);
-    //Combine user selections into single array
-     UserSelections=UserSelections.concat(selectedSpecialCharacters);
-}
- else if (temp == 'n' || temp== 'N') {console.log("Do not include lower special characters in the password");}
- else {prompt("Invalid input - page will reload!"); console.log("Invalid Input - reloading!"); location.reload();}
-
-
- if (IncLowerCase== false && IncUpperCase==false && IncNumeric== false && IncSpecial==false) {
-  {prompt("No valid characters selected for password generation, reloading!"); console.log("No valid characters selected for password gen!"); location.reload();}
- }
-
-};
-
-//Console log User selected concatenated array (testing)
-for (let index = 0; index < UserSelections.length; index++) {
-  console.log(UserSelections[index]);
-}
-
-
-
-// program to get a random item from an array [https://www.programiz.com/javascript/examples/get-random-item]
+  // program to get a random item from an array [https://www.programiz.com/javascript/examples/get-random-item]
 function generatePassword(x) {
 
   let item;       //declare here for access outside the for loop
@@ -94,8 +97,7 @@ function generatePassword(x) {
   return itemConcat;
 }
 
-// Write password to the #password output box
-function writePassword() {
+
   var password = generatePassword();
   var passwordText = document.querySelector("#password"); //required
 
