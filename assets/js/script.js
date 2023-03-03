@@ -75,28 +75,23 @@ for (let index = 0; index < UserSelections.length; index++) {
 }
 
 
-/*
-function generatePassword(x){
-x = "blah";
-return x;
- 
-   }
-*/
-
 
 // program to get a random item from an array [https://www.programiz.com/javascript/examples/get-random-item]
-
 function generatePassword(x) {
-  let item; //declare here for access outside the for loop
 
-  for (let index = 0; index < PassLength.length; index++) { 
+  let item;       //declare here for access outside the for loop
+  let itemConcat=[];
+ 
+  for (let index = 0; index < PassLength; index++) { 
   // get random index value
   const randomIndex = Math.floor(Math.random() * UserSelections.length);
   // get random item
-  item = UserSelections[randomIndex];
-  }
+  item=(UserSelections[randomIndex]);
+  itemConcat= itemConcat.concat(item)
 
-  return item;
+  }
+  itemConcat=itemConcat.join('');
+  return itemConcat;
 }
 
 // Write password to the #password output box
