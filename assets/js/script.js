@@ -3,11 +3,30 @@ const upperCaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
 const numbersZeroToNine = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 const selectedSpecialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', '-', '.', '~', '|', '<', '>', '=', '-', '_', '/', ':', ';', '?', '[', ']', '{', '}', '~'];
 
+// Password Option bools //
+var IncLowerCase= false;
+var IncUpperCase= false;
+var IncNumeric= false;
+var IncSpecial= false;
+//                      //
+
+
 var PassLength = prompt("Length of password? (8 to 128 Characters");
+
+
+
 console.log("User has requested a password length of:" + PassLength + " Characters");
 if (PassLength < 8 || PassLength > 128) {
   prompt("Password needs to be between 8 and 128 characters, please reload and try again")
   location.reload();
+}
+else {
+ var temp= prompt("Do you want to include Lower-Case letters? (Enter 'y' or 'n')");
+ if (temp == 'y' || temp == 'Y') {IncLowerCase = true; console.log("User wants to Include lower case letters?:" +IncLowerCase);}
+ else {console.log("Do not include lower case letters in the password")}
+ var temp= prompt("Do you want to include Upper-Case letters? (Enter 'y' or 'n')");
+  prompt("Do you want to include Numeric values? (Enter 'y' or 'n')")
+  prompt("Do you want to include Special Characters? (Enter 'y' or 'n')")
 };
 
 
@@ -26,3 +45,5 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
