@@ -4,8 +4,11 @@ const numbersZeroToNine = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 const selectedSpecialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', '-', '.', '~', '|', '<', '>', '=', '-', '_', '/', ':', ';', '?', '[', ']', '{', '}', '~'];
 
 var PassLength = prompt("Length of password? (8 to 128 Characters");
-console.log("User has requested a password length of:" + PassLength);
-
+console.log("User has requested a password length of:" + PassLength + " Characters");
+if (PassLength < 8 || PassLength > 128) {
+  prompt("Password needs to be between 8 and 128 characters, please reload and try again")
+  location.reload();
+};
 
 
 
