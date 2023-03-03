@@ -15,7 +15,7 @@ let IncSpecial=false;
 // Write password to the #password output box
 function writePassword() {
 
-  let PassLength = prompt("Length of password? (8 to 128 Characters");
+  let PassLength = prompt("Length of password? (8 to 128 Characters)");
   let UserSelections=[];
   
   
