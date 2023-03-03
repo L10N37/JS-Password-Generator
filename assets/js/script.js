@@ -27,12 +27,23 @@ else {
  var temp= prompt("Do you want to include Lower-Case letters? (Enter 'y' or 'n')");
  if (temp == 'y' || temp == 'Y') {IncLowerCase = true; console.log("User wants to Include lower case letters?:" +IncLowerCase);}
  else if (temp == 'n' || temp== 'N') {console.log("Do not include lower case letters in the password");}
- else{console.log("Invalid Input - reloading!"); prompt("Invalid Input - click 'OK' to reload!"); location.reload();}
+ else{console.log("Invalid Input - reloading!"); location.reload();}
 
  var temp= prompt("Do you want to include Upper-Case letters? (Enter 'y' or 'n')");
- if (temp == 'y' || temp == 'Y') {IncUpperCase = true; console.log("User wants to Include lower case letters?:" +IncUpperCase);}
+ if (temp == 'y' || temp == 'Y') {IncUpperCase = true; console.log("User wants to Include upper case letters?:" +IncUpperCase);}
  else if (temp == 'n' || temp== 'N') {console.log("Do not include lower case letters in the password")}
  else {console.log("Invalid Input - reloading!"); location.reload();}
+
+ var temp= prompt("Do you want to include Numeric values? (Enter 'y' or 'n')");
+ if (temp == 'y' || temp == 'Y') {IncNumeric = true; console.log("User wants to Include numberic values?:" +IncNumeric);}
+ else if (temp == 'n' || temp== 'N') {console.log("Do not include lower case letters in the password")}
+ else {console.log("Invalid Input - reloading!"); location.reload();}
+
+ var temp= prompt("Do you want to include Special Characters? (Enter 'y' or 'n')");
+ if (temp == 'y' || temp == 'Y') {IncSpecial = true; console.log("User wants to Include lower case letters?:" +IncSpecial);}
+ else if (temp == 'n' || temp== 'N') {console.log("Do not include lower case letters in the password")}
+ else {console.log("Invalid Input - reloading!"); location.reload();}
+
 
 
 
