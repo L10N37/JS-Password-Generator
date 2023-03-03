@@ -49,7 +49,7 @@ function writePassword() {
   
    var temp= prompt("Do you want to include Numeric values? (Enter 'y' or 'n')");
    if (temp == 'y' || temp == 'Y') {
-    IncNumeric = true; console.log("User wants to Include numberic values?:" +IncNumeric);
+    IncNumeric = true; console.log("User wants to Include numeric values?:" +IncNumeric);
      //Combine user selections into single array
     UserSelections=UserSelections.concat(numbersZeroToNine);
   }
