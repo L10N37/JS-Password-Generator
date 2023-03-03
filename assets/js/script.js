@@ -4,17 +4,15 @@ const numbersZeroToNine = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 const selectedSpecialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', '-', '.', '~', '|', '<', '>', '=', '-', '_', '/', ':', ';', '?', '[', ']', '{', '}', '~'];
 
 // Password Option bools //
-var IncLowerCase= false;
-var IncUpperCase= false;
-var IncNumeric= false;
-var IncSpecial= false;
+let IncLowerCase=false;
+let IncUpperCase=false;
+let IncNumeric=false;
+let IncSpecial=false;
 //                      //
 
 
-
-
-var PassLength = prompt("Length of password? (8 to 128 Characters");
-
+let PassLength = prompt("Length of password? (8 to 128 Characters");
+let UserSelections=[];
 
 
 console.log("User has requested a password length of:" + PassLength + " Characters");
@@ -23,49 +21,85 @@ if (PassLength < 8 || PassLength > 128 || isNaN(PassLength)) {
   location.reload();
 }
 
+
 else {
+
  var temp= prompt("Do you want to include Lower-Case letters? (Enter 'y' or 'n')");
- if (temp == 'y' || temp == 'Y') {IncLowerCase = true; console.log("User wants to Include lower case letters?:" +IncLowerCase);}
+ if (temp == 'y' || temp == 'Y') {
+  IncLowerCase = true; console.log("User wants to Include lower case letters?:" +IncLowerCase);
+  //Combine user selections into single array
+  UserSelections= UserSelections.concat(lowerCaseLetters);
+}
  else if (temp == 'n' || temp== 'N') {console.log("Do not include lower case letters in the password");}
  else{prompt("Invalid input - page will reload!"); console.log("Invalid Input - reloading!"); location.reload();}
 
+
  var temp= prompt("Do you want to include Upper-Case letters? (Enter 'y' or 'n')");
- if (temp == 'y' || temp == 'Y') {IncUpperCase = true; console.log("User wants to Include upper case letters?:" +IncUpperCase);}
- else if (temp == 'n' || temp== 'N') {console.log("Do not include lower case letters in the password")}
+ if (temp == 'y' || temp == 'Y') {
+  IncUpperCase = true; console.log("User wants to Include upper case letters?:" +IncUpperCase);
+    //Combine user selections into single array
+  UserSelections=UserSelections.concat(upperCaseLetters);
+}
+ else if (temp == 'n' || temp== 'N') {console.log("Do not include lower case letters in the password");}
  else {prompt("Invalid input - page will reload!"); console.log("Invalid Input - reloading!"); location.reload();}
+
 
  var temp= prompt("Do you want to include Numeric values? (Enter 'y' or 'n')");
- if (temp == 'y' || temp == 'Y') {IncNumeric = true; console.log("User wants to Include numberic values?:" +IncNumeric);}
- else if (temp == 'n' || temp== 'N') {console.log("Do not include lower case letters in the password")}
+ if (temp == 'y' || temp == 'Y') {
+  IncNumeric = true; console.log("User wants to Include numberic values?:" +IncNumeric);
+   //Combine user selections into single array
+  UserSelections=UserSelections.concat(numbersZeroToNine);
+}
+ else if (temp == 'n' || temp== 'N') {console.log("Do not include lower case letters in the password");}
  else {prompt("Invalid input - page will reload!"); console.log("Invalid Input - reloading!"); location.reload();}
 
+
  var temp= prompt("Do you want to include Special Characters? (Enter 'y' or 'n')");
- if (temp == 'y' || temp == 'Y') {IncSpecial = true; console.log("User wants to Include lower case letters?:" +IncSpecial);}
- else if (temp == 'n' || temp== 'N') {console.log("Do not include lower case letters in the password")}
+ if (temp == 'y' || temp == 'Y') {
+  IncSpecial = true; console.log("User wants to Include lower case letters?:" +IncSpecial);
+    //Combine user selections into single array
+     UserSelections=UserSelections.concat(selectedSpecialCharacters);
+}
+ else if (temp == 'n' || temp== 'N') {console.log("Do not include lower special characters in the password");}
  else {prompt("Invalid input - page will reload!"); console.log("Invalid Input - reloading!"); location.reload();}
+
 
  if (IncLowerCase== false && IncUpperCase==false && IncNumeric== false && IncSpecial==false) {
   {prompt("No valid characters selected for password generation, reloading!"); console.log("No valid characters selected for password gen!"); location.reload();}
- };
-
+ }
 
 };
 
 
+//Console log User selected concatenated array (testing)
+for (let index = 0; index < UserSelections.length; index++) {
+  console.log(UserSelections[index]);
+}
 
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+
+
+function generatePassword(x){
+ for (var i = 0; i <= PassLength; i++) {
+
+x= "blah";
+  
+return x;
+ 
+   }
+}
+
+
+
+// Write password to the #password output box
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  var passwordText = document.querySelector("#password"); //required
 
-  passwordText.value = password;
+  passwordText.value = password; //required
 
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
 
 
