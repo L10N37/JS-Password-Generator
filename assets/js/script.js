@@ -18,14 +18,12 @@ let IncNumeric=false;
 let IncSpecial=false;
 //                      //
 
-
   let PassLength = prompt("Length of password? (8 to 128 Characters)");
   let UserSelections=[];
   
-  
   console.log("User has requested a password length of:" + PassLength + " Characters");
   if (PassLength < 8 || PassLength > 128 || isNaN(PassLength)) {
-    prompt("Password needs to be between 8 and 128 characters, click 'cancel' or 'ok' to re-start and try again");
+    prompt("Password needs to be between 8 and 128 characters, click 'cancel' or 'ok' to restart and try again");
     writePassword();
     return;
   }
@@ -113,7 +111,3 @@ function generatePassword(x) {
 
   passwordText.value = password; //required
 }
-
-
-
-
