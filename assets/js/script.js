@@ -9,7 +9,7 @@ function writePassword(){
 const lowerCaseLetters = ['a', 'b','c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's','t', 'u', 'v', 'w', 'x', 'y', 'z'];
 const upperCaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 const numbersZeroToNine = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-const selectedSpecialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', '-', '.', '~', '|', '<', '>', '=', '-', '_', '/', ':', ';', '?', '[', ']', '{', '}', '~','\\', '"','\''];
+const specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', '-', '.', '~', '|', '<', '>', '=', '-', '_', '/', ':', ';', '?', '[', ']', '{', '}', '~','\\', '"','\''];
 
 // Password Option bools // ..These aren't -really- required for functionality
 let IncLowerCase=false;
@@ -73,7 +73,7 @@ let IncSpecial=false;
    if (temp == 'y' || temp == 'Y') {
     IncSpecial = true; console.log("User wants to Include lower case letters?:" +IncSpecial)
       //Combine user selections into single array
-       UserSelections=UserSelections.concat(selectedSpecialCharacters)
+       UserSelections=UserSelections.concat(specialCharacters)
   }
    else if (temp == 'n' || temp== 'N') {console.log("Do not include lower special characters in the password")}
    else {
