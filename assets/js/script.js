@@ -1,7 +1,8 @@
 function invalidInput(){
   console.log("Invalid Input");
-  prompt("invalid input");
+  window.alert("invalid input");
 }
+
 
 // Write password to the #password output box
 function writePassword(){
@@ -11,7 +12,7 @@ const upperCaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
 const numbersZeroToNine = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 const specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', '-', '.', '~', '|', '<', '>', '=', '-', '_', '/', ':', ';', '?', '[', ']', '{', '}', '~','\\', '"','\''];
 
-// Password Option bools // ..These aren't -really- required for functionality
+// Password Option bools //
 let IncLowerCase=false;
 let IncUpperCase=false;
 let IncNumeric=false;
@@ -23,7 +24,7 @@ let IncSpecial=false;
   
   console.log("User has requested a password length of:" + PassLength + " Characters");
   if (PassLength < 8 || PassLength > 128 || isNaN(PassLength)) {
-    prompt("Password needs to be between 8 and 128 characters, click 'cancel' or 'ok' to restart and try again");
+    window.alert("Password needs to be between 8 and 128 characters");
     writePassword();
     return;
   }
@@ -81,9 +82,14 @@ let IncSpecial=false;
   }
   
    if (IncLowerCase== false && IncUpperCase==false && IncNumeric== false && IncSpecial==false) {
-    {prompt("No valid characters selected for password generation, reloading!"); console.log("No valid characters selected for password gen!"); location.reload()}
+    {window.alert("No valid characters selected for password generation!"); console.log("No valid characters selected for password generation!");}
    }
-  
+   else {window.alert("Your password will be generated with the following criteria:\n" + "Password Length:  " + PassLength + " characters"
+   +  "\nInclude Lower Case letters?: " + IncLowerCase
+   +  "\nInclude Upper Case letters?: " + IncUpperCase
+   +  "\nInclude Numeric Values?: "+ IncNumeric
+   +  "\nInclude Special Characters?: " + IncSpecial)}
+ 
   //Console log User selected concatenated array (testing)
   for (let index = 0; index < UserSelections.length; index++) {
     console.log(UserSelections[index]);
