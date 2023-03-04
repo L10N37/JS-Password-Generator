@@ -47,7 +47,7 @@ let IncSpecial=false;
       //Combine user selections into single array
     UserSelections=UserSelections.concat(upperCaseLetters);
   }
-   else if (temp == 'n' || temp== 'N') {console.log("Do not include lower case letters in the password");}
+   else if (temp == 'n' || temp== 'N') {console.log("Do not include upper case letters in the password");}
    else {
     invalidInput();
     writePassword();
@@ -60,7 +60,7 @@ let IncSpecial=false;
      //Combine user selections into single array
     UserSelections=UserSelections.concat(numbersZeroToNine);
   }
-   else if (temp == 'n' || temp== 'N') {console.log("Do not include lower case letters in the password");}
+   else if (temp == 'n' || temp== 'N') {console.log("Do not include numeric values in the password");}
    else {
     invalidInput();
     writePassword();
@@ -69,11 +69,11 @@ let IncSpecial=false;
   
    var temp= prompt("Do you want to include Special Characters? (Enter 'y' or 'n')");
    if (temp == 'y' || temp == 'Y') {
-    IncSpecial = true; console.log("User wants to Include lower case letters?:" +IncSpecial)
+    IncSpecial = true; console.log("User wants to Include special characters?:" +IncSpecial)
       //Combine user selections into single array
        UserSelections=UserSelections.concat(specialCharacters)
   }
-   else if (temp == 'n' || temp== 'N') {console.log("Do not include lower special characters in the password")}
+   else if (temp == 'n' || temp== 'N') {console.log("Do not include special characters in the password")}
    else {
     invalidInput();
     writePassword();
